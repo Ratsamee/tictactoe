@@ -1,32 +1,55 @@
 
 let objTictactoe = tictactoe;
 let $resultShow;
+let $box;
+let $btnReplay;
+
+const showResult = function(){
+    let result = "";
+    if (objTictactoe.winner.way) {
+        $box.off('click');
+        result = `${objTictactoe.winner.name===USER?"Player X": "Player O"} is winner.`;
+    }else if(objTictactoe.totalCount === 9){
+        // no one win
+        result = "Draw!!!!";
+    }
+    if (result){
+        $resultShow[0].innerText = result;
+        $resultShow.show();
+        $btnReplay.show();
+    }
+};
+
 $('document').ready(function(){
     $resultShow = $('.show-result');
+    $box = $(".box");
+    $btnReplay = $("#btnReplay");
+
     $resultShow.hide();
-    $('.box').on('click', function(){
-        // count click number
-        objTictactoe.totalCount += 1;
-        
-        let markBy = (objTictactoe.totalCount % 2 === 0)?AI: USER;
-        if (objTictactoe.mark(this.id, markBy)){
-            // change write symbo to div
-            if (markBy === USER){
-                // click by user, write X to div
-                this.innerText += "X"
-            }else{
-                // click by AI, write O to div
-                this.innerText += "O";
-            }
-            if (objTictactoe.winner.way){
-                $('.show-result')[0].innerText = `${objTictactoe.winner.name===USER?"Player X": "Player O"} is winner.`;
-                $resultShow.show();
-            }else if(objTictactoe.totalCount === 9){
-                // no one win
-                $('.show-result')[0].innerText = "No one win";
-                $resultShow.show();
-            }
-            
+    $btnReplay.hide();
+
+    $box.on('click', function(){
+        if (objTictactoe.mark(+this.id)){
+            // user play
+            $(this).text("X");
+            // count click number
+            objTictactoe.totalCount += 1;
         }
-    })
+        if ((objTictactoe.winner.way === "") && (objTictactoe.totalCount !== 9)){
+            // user is not winner
+            const positionId = objTictactoe.markByAI();
+            if (positionId !== -1){
+                // AI play
+                $("#"+ positionId).text("O");
+                // count click number
+                objTictactoe.totalCount += 1;
+            }
+        }
+        showResult();
+    });
+
+    $btnReplay.on('click', function(){
+        window.location.reload();
+    });
+    
 })

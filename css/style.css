@@ -1,10 +1,21 @@
 /* *{ border: 1px red solid;} */
+@import url('https://fonts.googleapis.com/css?family=Barriecito|Mountains+of+Christmas&display=swap');
+
+body{
+  background-color: whitesmoke;
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+}
 .game-board {
-	width: 600px;
-	height: 600px;
+	width: 500px;
+	height: 500px;
 	margin: 0 auto;
   /* background-color: #fff; */
-  color: rgb(41, 36, 73);
+  color:rgb(214, 60, 60);
   /* border: 6px solid #2c3e50; 
   border-radius: 10px; */
 	display: grid;
@@ -14,9 +25,10 @@
 
 .box {
   /* border: 6px solid #2c3e50;  */
-  background-color: lightblue;
+  background-color: rgba(177, 239, 241, 0.7);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .5);
   border-radius: 5px;
-  font-family: Helvetica;
+  font-family: 'Mountains of Christmas', cursive;
   font-weight: bold;
   font-size: 6em;
   display: flex;
@@ -24,27 +36,43 @@
   align-items: center;
 }
 
+.box:hover{
+  background-color: lightgray;
+}
+
 h1{
     margin: 0 auto;
     text-align: center;
-    padding: 30px;
+    font-family: 'Barriecito', cursive;
+    font-size: 5em;
+    color: gray
 }
-
+.result{
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
 .show-result {
-  height: 100px;
-  width: 600px;
+  height: 70px;
+  width: 500px;
   padding: 20px;
-  border: 10px whitesmoke solid;
   box-sizing: border-box;
   margin: 0 auto;
+  margin-bottom: 10px;
   top: 200px;
   text-align: center;
-  padding: 20px;
-  background-color: #eeeeee;
+  background-color:  rgb(148, 145, 145, 0.5);
   font-family: Helvetica;
   color: crimson;
   font-size: 2em;
   text-align: center;
   vertical-align: middle;
+  font-family: 'Barriecito', cursive;
+}
+button{
+  font-family: 'Barriecito', cursive;
+  font-size: 2em;
+  margin: 0 auto;
+  width: 500px;
 }
 
