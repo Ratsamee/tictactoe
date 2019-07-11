@@ -39,28 +39,26 @@ $('document').ready(function(){
     $resultShow.text("").hide(300);
     $btnExit.hide(300);
 
-    $btnPlay1.on('click', function(){
-        countPlayer = 1;
-        $btnPlay2.prop("disabled", true);
-        $box.on('click', boxOnClick);
+    const afterDisabledPlayerButton = function(){
         $box.css('background-color', 'rgba(177, 239, 241, 0.7)');
         $box.hover(function(){
             $(this).css('background-color', 'lightgray');
         }, function(){
             $(this).css('background-color', 'rgba(177, 239, 241, 0.7)');
         });
+    }
+    $btnPlay1.on('click', function(){
+        countPlayer = 1;
+        $btnPlay2.prop("disabled", true);
+        $box.on('click', boxOnClick);
+        afterDisabledPlayerButton();
     });
 
     $btnPlay2.on('click', function(){
         countPlayer = 2;
         $btnPlay1.prop("disabled", true);
         $box.on('click', boxOnClick);
-        $box.css('background-color', 'rgba(177, 239, 241, 0.7)');
-        $box.hover(function(){
-            $(this).css('background-color', 'lightgray');
-        }, function(){
-            $(this).css('background-color', 'rgba(177, 239, 241, 0.7)');
-        });
+        afterDisabledPlayerButton();
     })
 
     const play1 = function($this){
