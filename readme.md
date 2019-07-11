@@ -1,6 +1,6 @@
 Tic Tac Toe
 ============
-[Look at my Link]("https://ratsamee.github.io/tictactoe/")
+Live Demo Link: https://ratsamee.github.io/tictactoe/
 
 Description
 -----------
