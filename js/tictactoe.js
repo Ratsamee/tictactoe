@@ -89,14 +89,27 @@ const tictactoe = {
         name: "",
         way: ""
     },
-    mark: function(positionId){
-        if (this.userWays.includes(positionId) || this.aiWays.includes(positionId)){
-            // positionId has already marked
-            return false;
+    mark: function(positionId, markBy){
+        if (markBy){
+            if (markBy === USER){
+                this.userWays.push(positionId);
+                checkWinner(this.userWays, USER);
+                return true;
+            }else{
+                this.aiWays.push(positionId);
+                checkWinner(this.aiWays, AI);
+                return true;
+            }
+        }else{
+            if (this.userWays.includes(positionId) || this.aiWays.includes(positionId)){
+                // positionId has already marked
+                return false;
+            }
+            this.userWays.push(positionId);
+            checkWinner(this.userWays, USER);
+            return true;
         }
-        this.userWays.push(positionId);
-        checkWinner(this.userWays, USER);
-        return true;
+        
     },
     markByAI: function(){
         const positionId = randomPositionId();

@@ -53,13 +53,13 @@ h1{
   padding-bottom: 10px;
 }
 .show-result {
-  height: 70px;
+  height: 60px;
   width: 500px;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   margin: 0 auto;
   margin-bottom: 10px;
-  top: 200px;
+  top: 190px;
   text-align: center;
   background-color:  rgb(148, 145, 145, 0.5);
   font-family: Helvetica;
@@ -69,10 +69,19 @@ h1{
   vertical-align: middle;
   font-family: 'Barriecito', cursive;
 }
-button{
+
+.exit{
   font-family: 'Barriecito', cursive;
   font-size: 2em;
   margin: 0 auto;
   width: 500px;
+}
+
+.btnPlayer{
+  font-family: 'Barriecito', cursive;
+  font-size: 2em;
+  margin: 0px 0px 0px 35px;
+  display: inline-block;
+  width: 200px;
 }
 
