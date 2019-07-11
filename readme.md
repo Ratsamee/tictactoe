@@ -12,10 +12,10 @@ This game allow you to play with AI or play with your friend by click 1 player o
 
 Screenshots 
 -----------
-* ![This is first screen]("~/images/1.png")
-* ![After click player, the boxes's background color will be changed]("~/images/2.png")
-* ![Play the game]("~/images/3.png")
-* ![Result and exit button will be shown at the top]("~/images/4.png")
+* ![This is first screen]("https://github.com/Ratsamee/tictactoe/blob/master/images/1.png")
+* ![After click player, the boxes's background color will be changed]("https://github.com/Ratsamee/tictactoe/blob/master/images/2.png")
+* ![Play the game]("https://github.com/Ratsamee/tictactoe/blob/master/images/3.png")
+* ![Result and exit button will be shown at the top]("https://github.com/Ratsamee/tictactoe/blob/master/images/4.png")
 
 Technologies
 ------------
