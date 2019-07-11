@@ -12,14 +12,20 @@ const showResult = function(){
     if (objTictactoe.winner.way) {
         $box.off('click');
         result = `${objTictactoe.winner.name===USER?"Player X": "Player O"} is winner.`;
+        objTictactoe.winner.way.split(",").forEach(way => {
+            $(`#${way}`).css({"background-color":"indianred", "color":"whitesmoke"}).hover(function(){
+                $(this).css('background-color', 'indianred');
+            }, function(){
+                $(this).css('background-color', 'indianred');
+            });
+        });
     }else if(objTictactoe.totalCount === 9){
         // no one win
         result = "Draw!!!!";
     }
     if (result){
-        $resultShow[0].innerText = result;
-        $resultShow.show();
-        $btnExit.show();
+        $resultShow.text(result).show(400);
+        $btnExit.show(400);
     }
 };
 
@@ -30,19 +36,31 @@ $('document').ready(function(){
     $btnPlay1 = $('#btnPlay1');
     $btnPlay2 = $('#btnPlay2');
 
-    $resultShow.hide();
-    $btnExit.hide();
+    $resultShow.text("").hide(300);
+    $btnExit.hide(300);
 
     $btnPlay1.on('click', function(){
         countPlayer = 1;
         $btnPlay2.prop("disabled", true);
         $box.on('click', boxOnClick);
+        $box.css('background-color', 'rgba(177, 239, 241, 0.7)');
+        $box.hover(function(){
+            $(this).css('background-color', 'lightgray');
+        }, function(){
+            $(this).css('background-color', 'rgba(177, 239, 241, 0.7)');
+        });
     });
 
     $btnPlay2.on('click', function(){
         countPlayer = 2;
         $btnPlay1.prop("disabled", true);
         $box.on('click', boxOnClick);
+        $box.css('background-color', 'rgba(177, 239, 241, 0.7)');
+        $box.hover(function(){
+            $(this).css('background-color', 'lightgray');
+        }, function(){
+            $(this).css('background-color', 'rgba(177, 239, 241, 0.7)');
+        });
     })
 
     const play1 = function($this){
@@ -71,7 +89,6 @@ $('document').ready(function(){
             console.log(+$this.attr('id'));
             console.log('markBy', markBy);
             $this.text((markBy === USER)?"X": "O");
-            $this.off('click');
             // count click number
             objTictactoe.totalCount += 1;
         }
@@ -80,6 +97,7 @@ $('document').ready(function(){
 
     const boxOnClick = function(){
         let $this =$(this);
+        $this.off('click');
         if (countPlayer===1 || countPlayer === 0){
             play1($this);
         }else if (countPlayer===2){
@@ -90,5 +108,6 @@ $('document').ready(function(){
     $btnExit.on('click', function(){
         window.location.reload();
     });
-    
+
+    $box.css('background-color', 'gray');
 });

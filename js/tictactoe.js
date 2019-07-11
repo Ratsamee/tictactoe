@@ -18,7 +18,7 @@ const checkWinner = function(positionList, winnerName){
         for (let i = 0; i < winnerWays.length; i++) {
             const way = winnerWays[i];
             if (checkWay(positionList, way)){
-                tictactoe.winner.way = way;
+                tictactoe.winner.way = way.join(",");
                 tictactoe.winner.name = winnerName;
                 break;
             }

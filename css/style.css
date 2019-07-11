@@ -24,9 +24,8 @@ body{
 }
 
 .box {
-  /* border: 6px solid #2c3e50;  */
   background-color: rgba(177, 239, 241, 0.7);
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .5);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
   border-radius: 5px;
   font-family: 'Mountains of Christmas', cursive;
   font-weight: bold;
@@ -36,8 +35,8 @@ body{
   align-items: center;
 }
 
-.box:hover{
-  background-color: lightgray;
+.boxSelected {
+  background-color: indianred;
 }
 
 h1{
@@ -77,11 +76,27 @@ h1{
   width: 500px;
 }
 
+.exit:hover {
+  cursor: pointer;
+}
+
 .btnPlayer{
   font-family: 'Barriecito', cursive;
   font-size: 2em;
   margin: 0px 0px 0px 35px;
   display: inline-block;
   width: 200px;
+  background-color: rgb(108, 201, 108);
 }
 
+.btnPlayer:disabled {
+  background-color: buttonface;
+}
+
+.btnPlayer:hover {
+  cursor: pointer;
+}
+
+.btnPlayer:disabled:hover {
+  cursor: auto;
+}
