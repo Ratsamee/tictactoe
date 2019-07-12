@@ -48,6 +48,9 @@ $('document').ready(function(){
         });
     }
     $btnPlay1.on('click', function(){
+        if (countPlayer !== 0){
+            e.preventDefault();
+        }
         countPlayer = 1;
         $btnPlay2.prop("disabled", true);
         $box.on('click', boxOnClick);
@@ -55,6 +58,9 @@ $('document').ready(function(){
     });
 
     $btnPlay2.on('click', function(){
+        if (countPlayer !== 0){
+            e.preventDefault();
+        }
         countPlayer = 2;
         $btnPlay1.prop("disabled", true);
         $box.on('click', boxOnClick);
